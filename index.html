@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conflict Regale</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="ui-overlay">
+        <div id="menu">
+            <h1>Conflict Regale</h1>
+            <div id="connection">
+                <button id="singlePlayerBtn">Single Player</button>
+                <button id="hostBtn">Host Game</button>
+                <button id="joinBtn">Join Game</button>
+            </div>
+            <div id="hostPanel" style="display:none">
+                <p>Your ID: <span id="myId"></span></p>
+                <p>Share this ID with your opponent</p>
+                <button id="startGameBtn" style="display:none">Start Game</button>
+            </div>
+            <div id="joinPanel" style="display:none">
+                <input type="text" id="remoteIdInput" placeholder="Enter host ID">
+                <button id="connectBtn">Connect</button>
+            </div>
+            <p id="status"></p>
+        </div>
+        <div id="gameUI" style="display:none">
+            <div id="topBar">
+                <span>Player 1 Controls</span>
+                <span id="elixirDisplay">Elixir: 5 / 10</span>
+            </div>
+            <div id="elixirMeter"><div id="elixirFill"></div><div id="elixirTicks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div id="cardBar">
+                <button id="previousCards" class="cardNav" aria-label="Previous cards">‹</button>
+                <div id="cardHand"></div>
+                <button id="nextCards" class="cardNav" aria-label="Next cards">›</button>
+            </div>
+            <div id="cardInfo">Select a card to see its stats.</div>
+        </div>
+        <div id="resultScreen" style="display:none">
+            <h2 id="resultTitle"></h2>
+            <p id="resultMessage"></p>
+            <button id="playAgain">Play Again</button>
+        </div>
+    </div>
+    <canvas id="renderCanvas"></canvas>
+
+    <script src="lib/babylon.js"></script>
+    <script src="lib/peerjs.min.js"></script>
+    <script src="js/network.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

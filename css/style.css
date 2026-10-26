@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #87CEEB;
+}
+
+#renderCanvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#ui-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+}
+
+#menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    pointer-events: all;
+}
+
+#menu h1 {
+    margin-bottom: 20px;
+    color: #FFD700;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #4CAF50;
+    color: white;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+}
+
+#gameUI {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: all;
+    background: rgba(0,0,0,0.7);
+    padding: 10px;
+    border-radius: 10px;
+    min-width: min(96vw, 560px);
+}
+
+.unitBtn {
+    background: #2196F3;
+}
+
+.unitBtn:hover {
+    background: #1976D2;
+}
+
+#topBar {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 8px 8px;
+    font-size: 14px;
+}
+
+#elixirMeter { position: relative; height: 12px; margin: 0 8px 8px; border: 2px solid #d9a4ff; border-radius: 8px; background: #29143d; overflow: hidden; }
+#elixirFill { height: 100%; width: 50%; border-radius: 6px; background: linear-gradient(90deg, #9b35d6, #e08bff); transition: width .25s ease; }
+#elixirTicks { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(9, 1fr); pointer-events: none; }
+#elixirTicks i { border-right: 1px solid rgba(255,255,255,.55); }
+
+#cardBar { display: flex; align-items: stretch; gap: 5px; }
+#cardHand { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; flex: 1; }
+.cardNav { padding: 4px 9px; margin: 0; background: #555; font-size: 24px; line-height: 1; }
+.card { margin: 0; padding: 7px 3px; min-width: 0; background: #34495e; border: 2px solid #95a5a6; font-size: 12px; }
+.card strong, .card small { display: block; }
+.card small { color: #ffd700; margin-top: 4px; }
+.card.selected { border-color: #ffd700; background: #46627d; }
+.card.unaffordable { opacity: .45; }
+#cardInfo { color: #eee; font-size: 12px; min-height: 16px; margin: 7px 5px 0; text-align: center; }
+
+#resultScreen { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 28px 42px; min-width: 260px; color: white; background: rgba(15, 15, 25, .94); border: 2px solid #ffd700; border-radius: 14px; text-align: center; pointer-events: all; }
+#resultTitle { color: #ffd700; margin-bottom: 10px; font-size: 32px; }
+#resultMessage { margin-bottom: 15px; }
